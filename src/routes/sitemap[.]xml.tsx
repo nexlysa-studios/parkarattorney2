@@ -3,7 +3,7 @@ import { services } from "@/data/services";
 import { articles } from "@/data/insights";
 
 /** XML sitemap, generated at request time from the site's content. */
-export const Route = createFileRoute("/sitemap[.]xml")({
+export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async ({ request }) => {
