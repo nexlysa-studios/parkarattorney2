@@ -53,8 +53,8 @@ function ServicesIndex() {
 
           <ul>
             {services.map((s, i) => (
-              <Reveal key={s.slug} delay={i * 0.05} y={20}>
-                <li className="border-t border-border">
+              <li key={s.slug} className="border-t border-border">
+                <Reveal delay={i * 0.05} y={20}>
                   <Link
                     to="/services/$slug"
                     params={{ slug: s.slug }}
@@ -78,8 +78,8 @@ function ServicesIndex() {
                       />
                     </span>
                   </Link>
-                </li>
-              </Reveal>
+                </Reveal>
+              </li>
             ))}
             <li className="border-t border-border" aria-hidden="true" />
           </ul>

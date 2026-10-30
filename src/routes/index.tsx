@@ -35,7 +35,8 @@ const heroLines = ["Clarity in Law.", "Confidence in", "Every Step."];
 
 function Index() {
   const reduced = useReducedMotion();
-  const [featured, ...rest] = articles;
+  const featured = articles[0]!;
+  const rest = articles.slice(1);
 
   return (
     <>
@@ -63,8 +64,7 @@ function Index() {
         <motion.div
           className="relative z-10 w-full pb-20 pt-40 lg:pb-28"
           variants={heroContainerVariants}
-          initial={reduced ? undefined : "hidden"}
-          animate={reduced ? undefined : "show"}
+          {...(reduced ? {} : { initial: "hidden", animate: "show" })}
         >
           <div className="container-editorial">
             <motion.p variants={heroLineVariants} className="eyebrow text-champagne">
@@ -172,8 +172,8 @@ function Index() {
             </div>
             <ul className="lg:col-span-8">
               {services.map((s, i) => (
-                <Reveal key={s.slug} delay={i * 0.05} y={20}>
-                  <li className="border-t border-border">
+                <li key={s.slug} className="border-t border-border">
+                  <Reveal delay={i * 0.05} y={20}>
                     <Link
                       to="/services/$slug"
                       params={{ slug: s.slug }}
@@ -198,8 +198,8 @@ function Index() {
                         />
                       </span>
                     </Link>
-                  </li>
-                </Reveal>
+                  </Reveal>
+                </li>
               ))}
               <li className="border-t border-border" aria-hidden="true" />
             </ul>
