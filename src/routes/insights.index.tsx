@@ -23,7 +23,8 @@ export const Route = createFileRoute("/insights/")({
 });
 
 function InsightsIndex() {
-  const [featured, ...rest] = articles;
+  const featured = articles[0]!;
+  const rest = articles.slice(1);
   return (
     <>
       <PageHeader

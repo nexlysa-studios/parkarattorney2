@@ -11,8 +11,11 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as InsightsRouteImport } from './routes/insights'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as InsightsIndexRouteImport } from './routes/insights.index'
 import { Route as InsightsSlugRouteImport } from './routes/insights.$slug'
@@ -29,14 +32,29 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InsightsRoute = InsightsRouteImport.update({
   id: '/insights',
   path: '/insights',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TeamRoute = TeamRouteImport.update({
@@ -68,8 +86,11 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/insights': typeof InsightsRouteWithChildren
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -79,6 +100,9 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -89,8 +113,11 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/insights': typeof InsightsRouteWithChildren
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -102,8 +129,11 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/contact'
     | '/insights'
+    | '/privacy-policy'
     | '/services'
+    | '/sitemap.xml'
     | '/team'
     | '/insights/$slug'
     | '/services/$slug'
@@ -113,6 +143,9 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/contact'
+    | '/privacy-policy'
+    | '/sitemap.xml'
     | '/team'
     | '/insights/$slug'
     | '/services/$slug'
@@ -122,8 +155,11 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/contact'
     | '/insights'
+    | '/privacy-policy'
     | '/services'
+    | '/sitemap.xml'
     | '/team'
     | '/insights/$slug'
     | '/services/$slug'
@@ -134,8 +170,11 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
   InsightsRoute: typeof InsightsRouteWithChildren
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ServicesRoute: typeof ServicesRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TeamRoute: typeof TeamRoute
 }
 
@@ -155,6 +194,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/insights': {
       id: '/insights'
       path: '/insights'
@@ -162,11 +208,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/team': {
@@ -238,8 +298,11 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
   InsightsRoute: InsightsRouteWithChildren,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   ServicesRoute: ServicesRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TeamRoute: TeamRoute,
 }
 export const routeTree = rootRouteImport

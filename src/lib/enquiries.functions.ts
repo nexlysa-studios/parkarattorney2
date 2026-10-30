@@ -21,13 +21,13 @@ const enquirySchema = z.object({
     .max(40)
     .regex(/^[+\d\s()\-]*$/, "Invalid phone number")
     .optional()
-    .or(() => ""),
+    .or(z.literal("")),
   enquiryType: z.string().trim().min(2).max(120),
   preferredContact: z.enum(["email", "phone"]),
   message: z.string().trim().min(10).max(2000),
   consent: z.boolean().refine((v) => v === true),
   // Honeypot + elapsed-time spam checks
-  company: z.string().max(0).optional().or(() => ""),
+  company: z.string().max(0).optional().or(z.literal("")),
   elapsedMs: z.number().int().min(0),
 });
 

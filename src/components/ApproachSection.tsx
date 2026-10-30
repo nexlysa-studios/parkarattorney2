@@ -29,22 +29,20 @@ const steps = [
  */
 export function ApproachSection() {
   return (
-    <div>
-      <ol className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-        {steps.map((s, i) => (
-          <Reveal key={s.n} delay={i * 0.1} as-li>
-            <li className="group relative pt-8">
-              <span
-                aria-hidden="true"
-                className="accent-line absolute left-0 top-0 w-10 transition-all duration-700 group-hover:w-full"
-              />
-              <span className="font-serif text-3xl text-champagne">{s.n}</span>
-              <h3 className="mt-3 font-serif text-2xl text-foreground">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-            </li>
-          </Reveal>
-        ))}
-      </ol>
+    <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+      {steps.map((s, i) => (
+        <Reveal key={s.n} delay={i * 0.1}>
+          <div className="group relative pt-8">
+            <span
+              aria-hidden="true"
+              className="accent-line absolute left-0 top-0 w-10 transition-all duration-700 group-hover:w-full"
+            />
+            <span className="font-serif text-3xl text-champagne">{s.n}</span>
+            <h3 className="mt-3 font-serif text-2xl text-foreground">{s.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+          </div>
+        </Reveal>
+      ))}
     </div>
   );
 }
