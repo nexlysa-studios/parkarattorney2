@@ -24,3 +24,18 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Deploy to Netlify
+
+Connect this repository to Netlify. The included `netlify.toml` configures the
+build command and Nitro output directory; SSR routes and server functions are
+deployed with the site.
+
+In the Netlify site environment variables, configure:
+
+- `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` for the browser build.
+- `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` for server-side requests.
+
+Make the `VITE_` variables available during builds and the server variables
+available to functions. Use the same values as the corresponding local
+environment variables.
