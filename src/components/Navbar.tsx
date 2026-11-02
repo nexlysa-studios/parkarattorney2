@@ -2,7 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Menu, X, ArrowRight } from "lucide-react";
-import logoAsset from "@/assets/parkar-logo.png.asset.json";
+import logoAsset from "@/assets/ParkarA-logo.png";
 import { site, navLinks } from "@/data/site";
 import { easing } from "@/components/Reveal";
 
@@ -58,7 +58,7 @@ export function Navbar() {
             className="flex shrink-0 items-center"
           >
             <img
-              src={logoAsset.url}
+              src={logoAsset}
               alt={`${site.name} logo`}
               width={124}
               height={107}
@@ -115,7 +115,7 @@ export function Navbar() {
           >
             <div className="flex h-[4.25rem] items-center px-6">
               <img
-                src={logoAsset.url}
+                src={logoAsset}
                 alt=""
                 className="h-10 w-auto rounded-sm bg-ivory p-1"
               />

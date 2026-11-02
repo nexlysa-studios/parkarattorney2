@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logoAsset from "@/assets/parkar-logo.png.asset.json";
+import logoAsset from "@/assets/ParkarA-logo.png";
 import { site, navLinks } from "@/data/site";
 import { services } from "@/data/services";
 
@@ -25,7 +25,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <img
-              src={logoAsset.url}
+              src={logoAsset}
               alt={`${site.name} logo`}
               width={124}
               height={107}
