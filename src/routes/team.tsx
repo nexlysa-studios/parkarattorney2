@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, UserRound } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Reveal } from "@/components/Reveal";
@@ -28,7 +28,7 @@ function Team() {
       <PageHeader
         eyebrow="Our Team"
         title="The people behind the practice."
-        intro="Profiles of the firm's attorneys and professional staff, each with their confirmed qualifications and areas of focus."
+        intro="Meet the firm's attorneys and professional staff, and find their direct contact details."
       />
 
       <section className="bg-ivory">
@@ -36,21 +36,43 @@ function Team() {
           {teamHasProfiles ? (
             <ul className="grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
               {team.map((m) => (
-                <li key={m.name}>
-                  <div className="bg-muted aspect-[4/5] w-full overflow-hidden">
-                    {m.photo && (
+                <li key={m.name} className="border-t border-border pt-6">
+                  <div className="flex aspect-[4/5] w-full items-center justify-center overflow-hidden bg-muted">
+                    {m.photo ? (
                       <img
                         src={m.photo}
                         alt={`Portrait of ${m.name}`}
                         loading="lazy"
                         className="h-full w-full object-cover"
                       />
+                    ) : (
+                      <UserRound
+                        className="size-20 text-muted-foreground/30"
+                        strokeWidth={1}
+                        aria-hidden="true"
+                      />
                     )}
                   </div>
-                  <h2 className="heading-serif mt-5 text-2xl text-foreground">{m.name}</h2>
+                  <h2 className="heading-serif text-2xl text-foreground">{m.name}</h2>
                   <p className="mt-1 text-sm font-semibold text-forest">{m.position}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">{m.qualifications}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.biography}</p>
+                  <address className="mt-4 space-y-2 text-sm not-italic">
+                    <p>
+                      <a
+                        className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+                        href={`tel:${m.phone.replace(/\s/g, "")}`}
+                      >
+                        {m.phone}
+                      </a>
+                    </p>
+                    <p>
+                      <a
+                        className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+                        href={`mailto:${m.email}`}
+                      >
+                        {m.email}
+                      </a>
+                    </p>
+                  </address>
                 </li>
               ))}
             </ul>

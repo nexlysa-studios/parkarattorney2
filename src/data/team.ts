@@ -1,34 +1,51 @@
 /**
- * Team profile content model.
- *
- * PLACEHOLDER: the firm has not yet supplied team information. No invented
- * names, portraits, credentials or positions are published. When the firm
- * provides profiles, add one entry per person — the team page renders this
- * structure automatically, with no redesign required.
- *
- * Every field is expected to be verified by the firm:
- *   - name / position: as the firm styles them
- *   - qualifications: only verified credentials
- *   - practiceFocus: confirmed areas of work
- *   - biography: approved copy
- *   - profileLink: optional professional profile URL
- *   - photo: approved portrait, once available
+ * Team profiles supplied by the firm.
  */
-
 export interface TeamMember {
   name: string;
   position: string;
-  qualifications: string;
-  practiceFocus: string;
-  biography: string;
+  phone: string;
+  email: string;
   photo?: string;
-  profileLink?: string;
 }
 
-/**
- * Empty until the firm supplies real profiles. The team page shows a
- * designed empty state while this array is empty.
- */
-export const team: TeamMember[] = [];
+export const team: TeamMember[] = [
+  {
+    name: "Nazeer Parkar",
+    position: "Attorney and Director",
+    phone: "083 299 8735",
+    email: "nazeer@parklaw.co.za",
+  },
+  {
+    name: "Hayley Botha",
+    position: "Office Manager and Deceased Estates Administrator",
+    phone: "067 809 6833",
+    email: "hayley@parklaw.co.za",
+  },
+  {
+    name: "Towfeeq Williams",
+    position: "Candidate Attorney",
+    phone: "063 658 5672",
+    email: "towfeeq@parklaw.co.za",
+  },
+  {
+    name: "Fatima Albertyn",
+    position: "Candidate Attorney",
+    phone: "064 909 5070",
+    email: "fatimaa@parklaw.co.za",
+  },
+  {
+    name: "Stephan November",
+    position: "Paralegal",
+    phone: "079 619 8399",
+    email: "stephan@parklaw.co.za",
+  },
+  {
+    name: "Annelise Theron",
+    position: "Reception and Accounts",
+    phone: "021 879 6631",
+    email: "annelise@parklaw.co.za",
+  },
+];
 
 export const teamHasProfiles = team.length > 0;
