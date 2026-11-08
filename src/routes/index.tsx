@@ -6,6 +6,7 @@ import firmImage from "@/assets/firm-interior.jpg";
 import { Reveal, heroContainerVariants, heroLineVariants, easing } from "@/components/Reveal";
 import { ApproachSection } from "@/components/ApproachSection";
 import { CtaBanner } from "@/components/CtaBanner";
+import DitherVeil from "@/components/DitherVeil";
 import { site } from "@/data/site";
 import { services } from "@/data/services";
 import { articles, formatDate } from "@/data/insights";
@@ -380,6 +381,31 @@ function Index() {
       </section>
 
       <CtaBanner />
+
+      {/* ——— Closing visual ——— */}
+      <section className="relative isolate h-[min(80svh,600px)] min-h-[420px] w-full overflow-hidden bg-evergreen">
+        <div className="absolute inset-0" aria-hidden="true">
+          <DitherVeil
+            src="https://images.unsplash.com/photo-1737071371043-761e02b1ef95?q=80&w=1400&auto=format&fit=crop"
+            pattern="floyd"
+            pixelSize={2}
+            inkColor="#120f17"
+            paperColor="#f4f1ea"
+            revealRadius={200}
+            softness={0.6}
+            linger={1}
+            style={{ width: "100%", height: "100%" }}
+          />
+        </div>
+        <div className="pointer-events-none relative z-10 flex h-full items-end bg-gradient-to-t from-evergreen/95 via-evergreen/25 to-transparent">
+          <div className="container-editorial w-full pb-12 sm:pb-16 lg:pb-20">
+            <p className="eyebrow text-champagne">{site.name}</p>
+            <h2 className="heading-serif mt-4 max-w-4xl text-5xl text-ivory sm:text-6xl lg:text-8xl">
+              Clarity for what matters most.
+            </h2>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
