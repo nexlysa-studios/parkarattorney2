@@ -187,6 +187,33 @@
   }
 }
 
+@utility hero-shine-text {
+  color: transparent;
+  background-image: linear-gradient(
+    105deg,
+    var(--color-ivory) 0%,
+    var(--color-ivory) 39%,
+    color-mix(in oklab, var(--color-champagne) 60%, var(--color-ivory)) 50%,
+    var(--color-ivory) 61%,
+    var(--color-ivory) 100%
+  );
+  background-size: 250% 100%;
+  background-position: 100% 0;
+  background-clip: text;
+  animation: hero-text-sheen 5s ease-in-out infinite;
+}
+
+@keyframes hero-text-sheen {
+  0%,
+  12% {
+    background-position: 100% 0;
+  }
+  88%,
+  100% {
+    background-position: -50% 0;
+  }
+}
+
 /* Thin animated accent line used under headings */
 @utility accent-line {
   height: 1px;
@@ -205,5 +232,11 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .hero-shine-text {
+    animation: none;
+    color: var(--color-ivory);
+    background-image: none;
   }
 }

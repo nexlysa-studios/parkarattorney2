@@ -47,8 +47,8 @@ export function Navbar() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,box-shadow] duration-500 ${
           glass
-            ? "border-b border-ivory/10 bg-ivory/80 backdrop-blur-md"
-            : "border-b border-border bg-ivory shadow-none"
+            ? "border-b border-ivory/20 bg-ivory/70 shadow-sm backdrop-blur-xl"
+            : "border-b border-border/70 bg-ivory/75 shadow-sm backdrop-blur-xl"
         }`}
       >
         <div className="container-editorial flex h-[4.25rem] items-center justify-between gap-6 lg:h-20">

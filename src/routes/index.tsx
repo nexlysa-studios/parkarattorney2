@@ -72,7 +72,7 @@ function Index() {
             </motion.p>
             <h1 className="heading-serif mt-6 text-5xl text-ivory sm:text-6xl lg:text-7xl lg:text-8xl">
               {heroLines.map((line) => (
-                <motion.span key={line} variants={heroLineVariants} className="block">
+                <motion.span key={line} variants={heroLineVariants} className="hero-shine-text block">
                   {line}
                 </motion.span>
               ))}
@@ -99,7 +99,7 @@ function Index() {
               </Link>
               <Link
                 to="/services"
-                className="inline-flex items-center justify-center border border-ivory/40 px-7 py-4 text-sm font-semibold text-ivory transition-colors duration-300 hover:border-ivory hover:bg-ivory/10"
+                className="inline-flex items-center justify-center border border-ivory/40 bg-ivory/10 px-7 py-4 text-sm font-semibold text-ivory shadow-sm backdrop-blur-md transition-colors duration-300 hover:border-ivory hover:bg-ivory/20"
               >
                 Explore Our Services
               </Link>
