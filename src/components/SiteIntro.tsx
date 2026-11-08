@@ -19,7 +19,7 @@ export function SiteIntro() {
   const reduced = useReducedMotion();
 
   useEffect(() => {
-    if (document.documentElement.dataset.siteIntro === "skip") {
+    if (document.documentElement.dataset["siteIntro"] === "skip") {
       setVisible(false);
       return;
     }

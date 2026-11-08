@@ -8,3 +8,4 @@
 - [x] Verification: build OK, vitest 1/1 pass, Playwright sweep of all pages (zero console errors), contact form submitted end-to-end and stored in the database
 - [ ] Awaiting firm inputs: verified contact details (phone/email/address/hours/WhatsApp), approved practice areas, real team profiles, approved articles, final privacy policy — placeholders are clearly labelled until then
 - [x] Answered user's question: recommended ZAR price for the site (researched from SA market benchmarks: ~R25,000–R40,000 once-off for this tier)
+- [x] Added translucent glass styling to the header and hero action, plus a continuous accessible sheen on the homepage headline
