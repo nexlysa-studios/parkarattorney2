@@ -112,6 +112,10 @@
 }
 
 @layer base {
+  html[data-site-intro="skip"] .site-intro {
+    display: none;
+  }
+
   * {
     border-color: var(--color-border);
   }

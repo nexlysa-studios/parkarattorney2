@@ -52,17 +52,14 @@ export function Navbar() {
         }`}
       >
         <div className="container-editorial flex h-[4.25rem] items-center justify-between gap-6 lg:h-20">
-          <Link
-            to="/"
-            aria-label={`${site.name} — home`}
-            className="flex shrink-0 items-center"
-          >
+          <Link to="/" aria-label={`${site.name} — home`} className="flex shrink-0 items-center">
             <img
               src={logoAsset}
               alt={`${site.name} logo`}
               width={124}
               height={107}
               className="h-11 w-auto lg:h-14"
+              data-header-logo
             />
           </Link>
 
@@ -114,11 +111,7 @@ export function Navbar() {
             className="fixed inset-0 z-40 flex flex-col bg-evergreen lg:hidden"
           >
             <div className="flex h-[4.25rem] items-center px-6">
-              <img
-                src={logoAsset}
-                alt=""
-                className="h-10 w-auto rounded-sm bg-ivory p-1"
-              />
+              <img src={logoAsset} alt="" className="h-10 w-auto rounded-sm bg-ivory p-1" />
             </div>
             <nav aria-label="Mobile" className="flex flex-1 flex-col justify-center px-8">
               <ul className="space-y-2">
@@ -155,9 +148,7 @@ export function Navbar() {
                 </Link>
               </motion.div>
             </nav>
-            <p className="px-8 pb-10 text-xs tracking-wide text-ivory/50">
-              {site.name}
-            </p>
+            <p className="px-8 pb-10 text-xs tracking-wide text-ivory/50">{site.name}</p>
           </motion.div>
         )}
       </AnimatePresence>

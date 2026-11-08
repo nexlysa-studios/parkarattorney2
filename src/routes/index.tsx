@@ -83,7 +83,10 @@ function Index() {
             >
               {site.heroSupport}
             </motion.p>
-            <motion.div variants={heroLineVariants} className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <motion.div
+              variants={heroLineVariants}
+              className="mt-10 flex flex-col gap-3 sm:flex-row"
+            >
               <Link
                 to="/contact"
                 className="group inline-flex items-center justify-center gap-2 bg-ivory px-7 py-4 text-sm font-semibold text-evergreen transition-colors duration-300 hover:bg-champagne"
@@ -132,9 +135,7 @@ function Index() {
           </div>
           <div className="lg:col-span-5 lg:pt-4">
             <Reveal delay={0.15}>
-              <p className="text-base leading-relaxed text-muted-foreground">
-                {site.introSupport}
-              </p>
+              <p className="text-base leading-relaxed text-muted-foreground">{site.introSupport}</p>
               {/* Restrained scales-of-justice ornament referencing the firm's mark */}
               <ScalesOrnament className="mt-10 hidden w-32 text-forest/30 lg:block" />
             </Reveal>
@@ -154,8 +155,8 @@ function Index() {
                     Areas of practice
                   </h2>
                   <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                    Explore the draft practice areas below. Each opens a detailed
-                    overview. Categories remain subject to the firm's confirmation.
+                    Explore the firm's legal services below. Each opens an overview of the matters
+                    the firm assists with.
                   </p>
                   <Link
                     to="/services"
@@ -279,9 +280,8 @@ function Index() {
                 </h2>
                 {!teamHasProfiles && (
                   <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                    Team profiles will appear here once the firm's attorneys and
-                    staff have been confirmed and their details approved for
-                    publication.
+                    Team profiles will appear here once the firm's attorneys and staff have been
+                    confirmed and their details approved for publication.
                   </p>
                 )}
               </Reveal>
@@ -388,8 +388,16 @@ function ScalesOrnament({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 120 100" fill="none" className={className} aria-hidden="true">
       <path d="M60 8v84M60 8l-44 12M60 8l44 12" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M16 20l-12 22h24L16 20zM104 20l-12 22h24l-12-22z" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M4 42c0 6.6 5.4 12 12 12s12-5.4 12-12M92 42c0 6.6 5.4 12 12 12s12-5.4 12-12" stroke="currentColor" strokeWidth="1.5" />
+      <path
+        d="M16 20l-12 22h24L16 20zM104 20l-12 22h24l-12-22z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M4 42c0 6.6 5.4 12 12 12s12-5.4 12-12M92 42c0 6.6 5.4 12 12 12s12-5.4 12-12"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
       <path d="M36 92h48M46 84h28" stroke="currentColor" strokeWidth="1.5" />
     </svg>
   );

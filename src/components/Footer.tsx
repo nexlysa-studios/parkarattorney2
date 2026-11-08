@@ -41,13 +41,19 @@ export function Footer() {
             <ul className="mt-5 space-y-3 text-sm">
               {navLinks.map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="link-underline text-muted-foreground hover:text-foreground">
+                  <Link
+                    to={l.to}
+                    className="link-underline text-muted-foreground hover:text-foreground"
+                  >
                     {l.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link to="/privacy-policy" className="link-underline text-muted-foreground hover:text-foreground">
+                <Link
+                  to="/privacy-policy"
+                  className="link-underline text-muted-foreground hover:text-foreground"
+                >
                   Privacy Policy
                 </Link>
               </li>
@@ -91,7 +97,7 @@ export function Footer() {
             © {year} {site.name}. All rights reserved.
           </p>
           <p className="text-muted-foreground/70">
-            Website content is provisional and pending review and approval by the firm.
+            Legal insights marked as drafts are pending firm review.
           </p>
         </div>
       </div>

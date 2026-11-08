@@ -14,7 +14,19 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { SiteIntro } from "@/components/SiteIntro";
 import { site } from "@/data/site";
+
+const siteIntroBootScript = `try {
+  if (localStorage.getItem("parkarattorneys-site-intro") === "shown") {
+    document.documentElement.dataset.siteIntro = "skip";
+  } else {
+    localStorage.setItem("parkarattorneys-site-intro", "shown");
+    document.documentElement.dataset.siteIntro = "show";
+  }
+} catch {
+  document.documentElement.dataset.siteIntro = "show";
+}`;
 
 function NotFoundComponent() {
   return (
@@ -48,9 +60,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="heading-serif text-2xl text-foreground">
-          This page didn't load
-        </h1>
+        <h1 className="heading-serif text-2xl text-foreground">This page didn't load</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
@@ -106,11 +116,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: siteIntroBootScript }} />
         {children}
         <Scripts />
       </body>
@@ -125,6 +136,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col">
         <Navbar />
+        <SiteIntro />
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <main id="main-content" className="flex-1">
           <Outlet />

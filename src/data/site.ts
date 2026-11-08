@@ -12,13 +12,12 @@ export const site = {
   shortName: "Parkar Attorneys",
   eyebrowName: "Parkar Attorneys Inc.",
   description:
-    "A South African legal practice offering considered, clear-headed counsel across corporate, litigation, property, family, labour and estate matters.",
+    "A South African legal practice assisting with family, corporate and commercial, eviction, civil litigation, wills and estates, criminal, immigration, and labour matters.",
   // PLACEHOLDER: tagline pending firm approval — provisional marketing copy.
   tagline: "Clarity in Law. Confidence in Every Step.",
   heroSupport:
     "Professional legal guidance grounded in careful thinking, clear communication, and a considered approach to every matter.",
-  introStatement:
-    "Every legal matter deserves clarity, diligence, and a considered strategy.",
+  introStatement: "Every legal matter deserves clarity, diligence, and a considered strategy.",
   introSupport:
     "We approach each matter with careful attention to its facts, its context and the people behind it — explaining options plainly and building a strategy that moves you forward with confidence.",
   firmIntroHeading: "A considered approach to legal practice.",
@@ -51,17 +50,15 @@ export const navLinks = [
   { label: "Contact", to: "/contact" },
 ] as const;
 
-/**
- * Enquiry categories shown in the contact form select.
- * PLACEHOLDER: provisional list mirroring the draft practice areas —
- * replace once the firm confirms its approved practice areas.
- */
+/** Confirmed enquiry categories supplied by the firm. */
 export const enquiryCategories = [
   "General enquiry",
-  "Corporate and Commercial Law",
-  "Civil Litigation and Dispute Resolution",
-  "Property Law and Conveyancing",
   "Family Law",
+  "Corporate and Commercial Law",
+  "Evictions",
+  "Civil Litigation and Dispute Resolution",
+  "Wills, Estates, Trusts and Planning",
+  "Criminal Law",
+  "Immigration Law",
   "Labour and Employment Law",
-  "Wills, Estates and Estate Planning",
 ] as const;

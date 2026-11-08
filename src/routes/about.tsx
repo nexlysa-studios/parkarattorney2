@@ -3,10 +3,10 @@ import { ArrowRight } from "lucide-react";
 import firmImage from "@/assets/firm-interior.jpg";
 import heroImage from "@/assets/hero-architecture.jpg";
 import { PageHeader } from "@/components/PageHeader";
-import { ApproachSection } from "@/components/ApproachSection";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/data/site";
+import { values } from "@/data/values";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -28,25 +28,6 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const values = [
-  {
-    title: "Careful thinking",
-    body: "Every matter begins with understanding — of the facts, the law and the person asking the question.",
-  },
-  {
-    title: "Clear communication",
-    body: "Legal advice is only useful when it is understood. We write and speak plainly, and we explain why.",
-  },
-  {
-    title: "Diligence in the detail",
-    body: "The quality of legal work lives in the detail. We prepare matters as though they will be tested — because they may be.",
-  },
-  {
-    title: "Integrity above convenience",
-    body: "We give honest advice even when it is not the convenient answer, and we decline work we cannot do properly.",
-  },
-];
-
 function About() {
   return (
     <>
@@ -55,18 +36,6 @@ function About() {
         title="A considered approach to legal practice."
         intro={site.firmIntroBody}
       />
-
-      {/* Values */}
-      <section className="bg-ivory">
-        <div className="container-editorial py-20 lg:py-28">
-          <Reveal>
-            <p className="eyebrow text-forest">How We Work</p>
-          </Reveal>
-          <div className="mt-12">
-            <ApproachSection />
-          </div>
-        </div>
-      </section>
 
       {/* Editorial introduction */}
       <section className="bg-paper border-t border-border">
@@ -89,22 +58,20 @@ function About() {
               </h2>
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
                 <p>
-                  Parkar Attorneys Inc. is a South African legal practice. We
-                  advise individuals, families and businesses — and we do so by
-                  taking the time to understand each matter properly before
-                  advising on it.
+                  Parkar Attorneys Inc. is a South African legal practice. We advise individuals,
+                  families and businesses — and we do so by taking the time to understand each
+                  matter properly before advising on it.
                 </p>
                 <p>
-                  Our approach is deliberately unpretentious: careful thinking,
-                  clear communication and diligent preparation, applied to every
-                  matter regardless of its size.
+                  Our approach is deliberately unpretentious: careful thinking, clear communication
+                  and diligent preparation, applied to every matter regardless of its size.
                 </p>
               </div>
               {/* PLACEHOLDER: founding date, professional memberships and
                   office location are withheld until the firm confirms them. */}
               <p className="mt-8 border-l-2 border-champagne pl-4 text-sm italic leading-relaxed text-muted-foreground">
-                Founding history, professional memberships and office details
-                will appear here once confirmed by the firm.
+                Founding history, professional memberships and office details will appear here once
+                confirmed by the firm.
               </p>
             </Reveal>
           </div>
@@ -126,7 +93,7 @@ function About() {
                 <div className="border-t border-border pt-6">
                   <h3 className="font-serif text-2xl text-foreground">{v.title}</h3>
                   <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-                    {v.body}
+                    {v.description}
                   </p>
                 </div>
               </Reveal>

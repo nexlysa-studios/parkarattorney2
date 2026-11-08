@@ -87,50 +87,15 @@ function ServiceDetail() {
               </h2>
               <ul className="mt-6 grid gap-x-10 gap-y-4 sm:grid-cols-2">
                 {service.matters.map((m) => (
-                  <li key={m} className="flex items-start gap-3 border-t border-border pt-4 text-sm text-foreground/85">
+                  <li
+                    key={m}
+                    className="flex items-start gap-3 border-t border-border pt-4 text-sm text-foreground/85"
+                  >
                     <span aria-hidden="true" className="mt-2 block h-1 w-1 shrink-0 bg-champagne" />
                     {m}
                   </li>
                 ))}
               </ul>
-            </Reveal>
-
-            <Reveal delay={0.08}>
-              <h2 className="heading-serif mt-14 text-3xl text-foreground">How we work</h2>
-              <ol className="mt-6 space-y-6">
-                {service.process.map((step, i) => (
-                  <li key={step.slice(0, 24)} className="flex gap-5 border-t border-border pt-5">
-                    <span className="font-serif text-xl text-champagne">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">{step}</p>
-                  </li>
-                ))}
-              </ol>
-            </Reveal>
-
-            <Reveal delay={0.08}>
-              <h2 className="heading-serif mt-14 text-3xl text-foreground">Common questions</h2>
-              <div className="mt-6 divide-y divide-border border-y border-border">
-                {service.faqs.map((f) => (
-                  <details key={f.question} className="group py-5">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-foreground">
-                      {f.question}
-                      <ChevronRight
-                        className="size-4 shrink-0 text-forest transition-transform duration-300 group-open:rotate-90"
-                        aria-hidden="true"
-                      />
-                    </summary>
-                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                      {f.answer}
-                    </p>
-                  </details>
-                ))}
-              </div>
-              <p className="mt-4 text-xs text-muted-foreground/70">
-                Answers are general information only and are subject to review by
-                the firm before publication.
-              </p>
             </Reveal>
           </div>
 
@@ -140,8 +105,8 @@ function ServiceDetail() {
               <div className="border border-border bg-paper p-8">
                 <p className="eyebrow text-forest">Discuss your matter</p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Tell us briefly what you need and the appropriate next steps
-                  can be discussed with you.
+                  Tell us briefly what you need and the appropriate next steps can be discussed with
+                  you.
                 </p>
                 <Link
                   to="/contact"

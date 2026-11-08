@@ -13,7 +13,7 @@ export const Route = createFileRoute("/services/")({
       {
         name: "description",
         content:
-          "Draft practice areas of Parkar Attorneys Inc. — corporate and commercial, litigation, property, family, labour and estate matters.",
+          "Explore the legal services offered by Parkar Attorneys Inc., including family, commercial, litigation, estate, criminal, immigration and labour law.",
       },
       { property: "og:title", content: `Legal Services | ${site.name}` },
       {
@@ -32,7 +32,7 @@ function ServicesIndex() {
       <PageHeader
         eyebrow="Legal Services"
         title="Clear counsel across the areas that matter."
-        intro="Browse the firm's draft practice areas below. Each service page explains, in plain language, what the work involves and how we approach it. Categories remain subject to the firm's confirmation."
+        intro="Explore the firm's legal services below. Each page outlines the matters the firm assists with."
       />
 
       <section className="bg-ivory">
